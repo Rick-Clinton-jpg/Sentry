@@ -44,6 +44,34 @@ cat path/to/file.txt | sentry scan --stdin
 Exit code is `1` if any `HIGH` severity finding is present, `0` otherwise —
 suitable for use as a CI gate or pre-commit check.
 
+## Install as a skill
+
+This repo is also a Claude Code plugin marketplace, shipping the
+`sentry-scan` skill: given pasted text, an uploaded file, or a repo/directory
+to check, it runs the real `sentry scan` CLI and reports back which of the
+six detection categories fired, in plain language.
+
+**Manual:** copy `skills/sentry-scan/SKILL.md` into
+`~/.claude/skills/sentry-scan/SKILL.md` for a personal skill available
+across all projects, or into `.claude/skills/sentry-scan/SKILL.md` within a
+specific project to scope it there. Invoke with `/sentry-scan`.
+
+**Via plugin marketplace:**
+
+```
+/plugin marketplace add Rick-Clinton-jpg/Sentry
+/plugin install sentry-scan@sentry
+```
+
+Note: plugin-installed skills are namespaced by plugin name, so the
+installed command is `/sentry-scan:sentry-scan`, not the bare `/sentry-scan`
+shown above. The manual install path is the one that gives you the bare
+`/sentry-scan` command.
+
+The skill and marketplace definitions live in
+[`skills/sentry-scan/`](./skills/sentry-scan/) and
+[`.claude-plugin/`](./.claude-plugin/).
+
 ## Detection categories
 
 | Rule | Severity | Description |
