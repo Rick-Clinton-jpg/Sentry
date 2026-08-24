@@ -112,3 +112,9 @@ Rules live in `rules/default_rules.json` as a JSON array. Each entry needs:
 - Add at least one positive and one negative example string for the new rule
   to `tests/test_rules_detection.py` (see the `CASES` dict) — a test asserts
   every rule in the ruleset has coverage there.
+
+## License
+Licensed under PolyForm Noncommercial 1.0.0 — free to use, including
+personal and research use. Commercial use requires a separate license.
+See [LICENSE](./LICENSE) for full terms, or reach out to discuss
+commercial licensing.
